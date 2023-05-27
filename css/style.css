@@ -1,0 +1,793 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+/* scrollbar css starts*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: grey;
+    border: 1px solid #fff;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1d9bf0;
+  }
+/* Scroll bar css ends */
+
+/* Basic css */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    overflow-x: hidden;
+    color: black;
+    font-family: 'Teko', sans-serif;
+}
+
+*::after,
+::before {
+    box-sizing: border-box;
+}
+
+.pr {
+    color: black;
+}
+
+.pr:hover {
+    color: #1d9bf0;
+}
+
+html body {
+    height: 100%;
+    width: 100%;
+}
+
+/* Basic css end */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #1d9bf0;
+    color: black;
+    padding: 1.6rem 10%;
+    height: 40px;
+    overflow-y: hidden;
+    box-shadow: 0px -7px 15px white
+}
+
+
+.navBarList {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30vw;
+}
+
+/* logo css */
+.logo {
+    font-size: larger;
+    font-family: 'Acme', sans-serif;
+}
+
+.logo:hover {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+/* logo css end */
+/*Home page css starts */
+.particles-js-canvas-el{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+main {
+
+    height: 84.5vh;
+    width: 100%;
+    padding: 76px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-image: linear-gradient(180deg, black, #1d9bf0);
+    background-size: cover;
+    overflow: hidden;
+}
+
+h1,
+p {
+    color: white;
+    font-size: 60px;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+#am:hover,
+h1:hover {
+    color: #1d9bf0;
+}
+
+#am {
+    font-size: 30px;
+}
+
+.logoContainer img {
+    border-radius: 50%;
+    height: 250px;
+}
+
+ul {
+    display: flex;
+    justify-content: left;
+    background-repeat: no-repeat;
+    gap: 10px
+}
+
+ul a img {
+    height: 20px;
+    border-radius: 200px;
+
+}
+
+.mobileNavbarBtn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobileBtnIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: black;
+}
+
+
+.mobileBtnIcon[name="close-outline"] {
+    display: none;
+}
+
+#toggleDark {
+    cursor: pointer;
+}
+
+.mobileBtnIcon:hover {
+    color: white;
+    border: 1px solid white;
+    border-radius: 10%;
+}
+
+.indexcontainer {
+    animation: 1.5s ease-out 0s 1 slideInTop;
+    z-index: 100;
+}
+
+.logoContainer {
+    animation: 1.5s ease-out 0s 1 slideInBottom;
+    z-index: 100;
+}
+
+.footer {
+    
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d9bf0;
+    color: black;
+    box-shadow: 10px 10px 30px black;
+    padding: 0 20px;
+}
+
+.mb {
+    font-size: smaller;
+    color: black;
+}
+
+.mb:hover {
+    color: white
+}
+
+/* CSS for navbar */
+@media(max-width: 1204px) {
+
+    .mobileNavbarBtn {
+        display: block;
+        z-index: 999;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        /* display: none; */
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(250deg, #1d9bf0, black);
+        position: absolute;
+        top: 0;
+        left: 0;
+
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: traslateX(100%);
+        transition: all 0.3s linear;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .navBarList {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .navBarList li {
+        font-size: 30px;
+    }
+
+    .active .navbar {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .mobileNavbarBtn .mobileBtnIcon[name="close-outline"] {
+        display: block;
+    }
+
+    .active .mobileNavbarBtn .mobileBtnIcon[name="menu-outline"] {
+        display: none;
+    }
+
+    .header1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background-color: #1d9bf0;
+        padding: 1.6rem 10%;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+}
+
+/* Home page css ends */
+
+
+
+/* Contact page CSS starts */
+.container {
+    max-width: 700px;
+    width: 100%;
+    background: linear-gradient(135deg, white, #1d9bf0);
+    padding: 25px 30px;
+    border-radius: 5px;
+    animation: 0.5s ease-out 0s 1 slideInTop;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 10px;
+
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg, black, #1d9bf0);
+    /* margin-bottom: -5px; */
+}
+
+
+.container form .userDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+
+form .userDetails .inputBox {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+    border-radius: 5px;
+}
+
+.userDetails .inputBox input {
+    height: 45px;
+    margin-bottom: 15px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.userDetails .inputBox input:focus,
+.userDetails .inputBox input:valid {
+    border-color: #1d9bf0;
+}
+
+form .sendButton {
+    height: 45px;
+    margin: 0 0 45px 0;
+}
+
+form .sendButton input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: linear-gradient(135deg, black, #1d9bf0);
+}
+
+form .sendButton input:hover {
+    background: linear-gradient(-135deg, black, #1d9bf0);
+    transition: all 1s ease;
+}
+
+@media(max-width: 584px) {
+
+    .container {
+        max-width: 70%;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 110px 0;
+    }
+
+    form .userDetails .inputBox {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .container form .userDetails {
+        max-height: 300px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .userDetails::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+/* Contact page CSS ends */
+
+/* Project page css starts */
+.project {
+    height: 100%;
+    display: block;
+}
+
+.cards {
+    max-height: 100%;
+    margin: 0 auto;
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px 0;
+    transition: 0.5s ease-out;
+    background-color: #1d9bf0;
+    transition: 1s ease-in;
+}
+
+.card:hover {
+    border: 1px solid white;
+}
+
+.cardImg {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+.cardTitle {
+    text-align: left;
+    font-size: 2em;
+    font-family: 'Acme', sans-serif;
+    color: white;
+}
+
+.card_content {
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+
+}
+
+.cardInfo {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8em;
+}
+
+.cardButton {
+    padding: 10px 20px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #1d9bf0;
+    transition: 0.5s ease-out;
+}
+
+.cardButton:hover {
+    border: 2px solid white;
+    background: green;
+    color: white;
+}
+
+.cards {
+    animation: 0.5s ease-out 0s 1 slideInTop;
+}
+
+.pcontainer {
+    color: white;
+    animation: 0.5s ease-out 0s 1 slideInTop;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.bi-file-earmark-code {
+    color: #1d9bf0;
+    z-index: 10;
+    font-size: 25px;
+
+}
+
+.ct b {
+    color: white;
+    letter-spacing: 2px;
+    z-index: 10;
+    font-size: 25px;
+}
+
+/* Project css ends */
+
+
+/* About css starts */
+.about {
+    background: white;
+    border: 2px solid #1d9bf0;
+    box-shadow: 0 0 15px black;
+    animation: 1s ease-out 0s 1 slideInTop;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    max-height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.about::-webkit-scrollbar {
+    display: none;
+}
+
+.about .aboutHeader {
+    font-size: 30px;
+    color: #000000;
+}
+
+/* .about .aboutHeader::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    color: black;
+} */
+#aname b {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+#ainfo {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color: grey;
+
+}
+
+#aboutm {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: black;
+    font-weight: 500;
+    width: 100%;
+}
+
+.moreInfo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.in {
+    font-size: 20px;
+}
+
+@media(max-width: 500px) {
+    #aname b {
+        font-size: 20px;
+    }
+
+    #aboutm {
+        font-size: 18px;
+    }
+
+    .in {
+        font-size: 15px;
+    }
+
+}
+
+@media(max-width: 280px) {
+    #aboutm {
+        font-size: 13px;
+    }
+}
+
+/* About css ends */
+
+
+
+/* Education css starts */
+.education {
+    height: 100%;
+    display: block;
+}
+.education::-webkit-scrollbar{
+    display: none;
+    scrollbar-width: none;
+}
+
+.ecards {
+    max-height: 100%;
+    margin: 0 auto;
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(305px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.ecards::-webkit-scrollbar {
+    display: none;
+}
+
+.ecard {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px 0;
+    transition: 0.5s ease-out;
+    background-color: #1d9bf0;
+    transition: 0.4s ease-in;
+}
+
+.ecard:hover {
+    border: 1px solid white;
+}
+
+.ecardImg {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+.ecardTitle {
+    text-align: left;
+    font-size: 2em;
+    font-family: 'Acme', sans-serif;
+    color: white;
+}
+
+.ecard_content {
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+
+}
+
+.ecardInfo {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.2em;
+}
+
+.ecardButton {
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #1d9bf0;
+    transition: 0.5s ease-out;
+}
+
+.ecardButton:hover {
+    border: 2px solid white;
+    background: green;
+    color: white;
+}
+
+.ecards {
+    animation: 0.5s ease-out 0s 1 slideInTop;
+}
+
+.econtainer {
+    color: white;
+    animation: 0.5s ease-out 0s 1 slideInTop;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.ce b {
+    color: white;
+    letter-spacing: 2px;
+    z-index: 10;
+    font-size: 35px;
+}
+.bi-book {
+    color: #1d9bf0;
+    z-index: 10;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+/* Education css ends */
+
+/* Skills css starts */
+.skillsContainer{
+    background: #1d9bf0;
+    border: 2px double #fff;
+    border-radius: 20px;
+    height: 80vh;
+    width: 80vw;
+    z-index: 100;
+    display: grid;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: start;
+
+}
+.skillparticle{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+.skillslogo img{
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.skillslogo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* Skills css ends */
+
+/* Animation Css starts */
+@keyframes slideInTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation Css ends */
